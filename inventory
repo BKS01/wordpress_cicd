@@ -1,2 +1,2 @@
 [web]
-gcloud1 ansible_host=34.118.83.252 ansible_user=wantedkir1995 ansible_ssh_private_key_file=/root/.ssh/id_rsa 
+gcloud1 ansible_host=34.118.83.252 
