@@ -1,0 +1,24 @@
+---
+- name: Deploy WordPress Project
+  hosts: gcloud1
+  become: yes
+  tasks:
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Install Docker-Compose
+      apt:
+        name: docker-compose
+        state: present
+
+    - name: Copy Docker-Compose YAML
+      copy:
+        src: ./docker-compose.yml
+        dest: /home/wantedkir1995/docker-compose.yml
+
+    - name: Start Docker Containers
+      command: docker-compose up -d
+      args:
+        chdir: /home/wantedkir1995/

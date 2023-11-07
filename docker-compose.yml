@@ -1,0 +1,23 @@
+version: '3'
+services:
+  wordpress:
+    image: bks01/wordpress-cicd
+    container_name: my-wordpress-container
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: your_db_user
+      WORDPRESS_DB_PASSWORD: your_db_password
+    ports:
+      - "8080:8080"
+  db:
+    image: mariadb
+    container_name: mariadb-container
+    environment:
+      MYSQL_ROOT_PASSWORD: your_db_root_password
+      MYSQL_DATABASE: your_db_name
+
+  nginx:
+    image: nginx
+    container_name: nginx-container
+    ports:
+      - "80:80"
